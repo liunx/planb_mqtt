@@ -20,7 +20,7 @@ std::string encode(cv::Mat mat)
 {
     planb::Image image;
     std::vector<uchar> imgEncoded;
-    cv::imencode(".png", mat, imgEncoded);
+    cv::imencode(".jpg", mat, imgEncoded);
     image.set_data(imgEncoded.data(), imgEncoded.size());
     std::string data;
     image.SerializeToString(&data);

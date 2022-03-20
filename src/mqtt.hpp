@@ -29,7 +29,7 @@ public:
     int publish(std::string &topic, int len, const void *data)
     {
         int rc = 0;
-        rc = mosquitto_publish(mosq_, nullptr, topic.c_str(), len, data, 0, 0);
+        rc = mosquitto_publish(mosq_, nullptr, topic.c_str(), len, data, 0, false);
         if (rc != MOSQ_ERR_SUCCESS)
         {
             fprintf(stderr, "Error publishing: %s\n", mosquitto_strerror(rc));
